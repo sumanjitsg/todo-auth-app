@@ -1,8 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { AddTodoForm } from '../AddTodoForm';
 import { TodoList } from '../TodoList';
 import { TodoListProvider } from '../contexts/TodoListContext';
+import { useAuth } from '../hooks';
 
 export function TodoListPage() {
+    const navigate = useNavigate();
+    const { currentUser, logout } = useAuth();
+
+    const handleLogout = async () => {
+        await logout();
+        navigate('/login', { replace: true });
+    };
+
     return (
         <TodoListProvider>
             <div
@@ -22,8 +32,8 @@ export function TodoListPage() {
                         gap: '1rem',
                     }}
                 >
-                    <div>Hi, {}</div>
-                    <button onClick={() => {}} className="logout-button">
+                    <div>Hi, {currentUser?.displayName}</div>
+                    <button onClick={handleLogout} className="logout-button">
                         Logout
                     </button>
                 </div>
