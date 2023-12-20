@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { useTodoListDispatch } from './hooks';
 
 export function AddTodoForm() {
     const [value, setValue] = useState('');
-    const dispatch = useTodoListDispatch();
 
     const onChange = event => {
         setValue(event.target.value);
@@ -15,10 +13,10 @@ export function AddTodoForm() {
 
     const onKeyDown = event => {
         if (event.code === 'Enter') {
-            dispatch({
-                type: 'todos/addTodo',
-                payload: { text: event.target.value },
-            });
+            // dispatch({
+            //     type: 'todos/addTodo',
+            //     payload: { text: event.target.value },
+            // });
 
             setValue('');
         }

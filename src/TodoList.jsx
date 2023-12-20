@@ -1,8 +1,8 @@
 import { Todo } from './Todo';
-import { useTodoList } from './hooks';
+import { InitialTodos } from './data';
 
 export function TodoList() {
-    const todos = useTodoList();
+    const todos = InitialTodos;
 
     return (
         <ul>
