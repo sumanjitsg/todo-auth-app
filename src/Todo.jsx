@@ -1,16 +1,12 @@
-import { useTodoListDispatch } from './hooks';
-
 export function Todo({ item }) {
-    const dispatch = useTodoListDispatch();
-
     return (
         <li
             onClick={event => {
                 if (event.target.dataset.deleteTodo !== undefined) {
-                    dispatch({
-                        type: 'todos/deleteTodo',
-                        payload: { id: item.id },
-                    });
+                    // dispatch({
+                    //     type: 'todos/deleteTodo',
+                    //     payload: { id: item.id },
+                    // });
                 }
             }}
         >

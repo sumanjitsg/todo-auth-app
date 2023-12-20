@@ -1,7 +1,11 @@
 import { TodoListPage } from './pages/TodoListPage';
 
 function App() {
-    return <TodoListPage />;
+    return (
+        <main>
+            <TodoListPage />
+        </main>
+    );
 }
 
 export default App;
